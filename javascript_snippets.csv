@@ -31,3 +31,8 @@ arrow function declaration,"var myFunc = () => {
 }"
 template literals,"var name = 'John';
 console.log(`Hello, ${name}!`);"
+try catch statement,"try {
+  // code here
+} catch (error) {
+  // code here
+}"
