@@ -1,0 +1,33 @@
+keyword,code
+variable declaration,var x = 5;
+function declaration,"function myFunction() {
+  // code here
+}"
+if statement,"if (condition) {
+  // code here
+} else {
+  // code here
+}"
+for loop,"for (var i = 0; i < 10; i++) {
+  // code here
+}"
+while loop,"while (condition) {
+  // code here
+}"
+switch statement,"switch (expression) {
+  case value1:
+    // code here
+    break;
+  case value2:
+    // code here
+    break;
+  default:
+    // code here
+}"
+array declaration,"var arr = [1, 2, 3];"
+object declaration,var obj = {key: value};
+arrow function declaration,"var myFunc = () => {
+  // code here
+}"
+template literals,"var name = 'John';
+console.log(`Hello, ${name}!`);"
