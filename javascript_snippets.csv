@@ -57,3 +57,363 @@ async and await method,"async function fetchData() {
 }"
 array forEach method,"const numbers = [1, 2, 3];
 numbers.forEach(number => console.log(number));"
+async/await,"async function fetchData() {
+  try {
+    const response = await fetch('https://api.example.com/data');
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}"
+array map method,"const numbers = [1, 2, 3];
+const doubledNumbers = numbers.map(number => number * 2);"
+array filter method,"const numbers = [1, 2, 3, 4, 5];
+const evenNumbers = numbers.filter(number => number % 2 === 0);"
+array reduce method,"const numbers = [1, 2, 3, 4, 5];
+const sum = numbers.reduce((total, number) => total + number, 0);"
+destructuring assignment,"const person = { name: 'John', age: 30 };
+const { name, age } = person;"
+spread operator,"const numbers = [1, 2, 3];
+const newNumbers = [...numbers, 4, 5];"
+string concatenation,"const firstName = 'John';
+const lastName = 'Doe';
+const fullName = firstName + ' ' + lastName;"
+string interpolation,"const name = 'John';
+console.log(`Hello, ${name}!`);"
+array push method,"const numbers = [1, 2, 3];
+numbers.push(4);"
+array pop method,"const numbers = [1, 2, 3];
+const lastNumber = numbers.pop();"
+array shift method,"const numbers = [1, 2, 3];
+const firstNumber = numbers.shift();"
+array unshift method,"const numbers = [2, 3];
+numbers.unshift(1);"
+array slice method,"const numbers = [1, 2, 3, 4, 5];
+const slicedNumbers = numbers.slice(1, 3);"
+array splice method,"const numbers = [1, 2, 3, 4, 5];
+numbers.splice(2, 1);"
+array indexOf method,"const numbers = [1, 2, 3, 4, 5];
+const index = numbers.indexOf(3);"
+array includes method,"const numbers = [1, 2, 3, 4, 5];
+const isPresent = numbers.includes(3);"
+linked list node,"class ListNode {
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+  }
+}"
+linked list insertion at head,"function insertAtHead(head, val) {
+  const newNode = new ListNode(val);
+  newNode.next = head;
+  return newNode;
+}"
+linked list insertion at tail,"function insertAtTail(head, val) {
+  const newNode = new ListNode(val);
+  if (!head) {
+    return newNode;
+  }
+  let current = head;
+  while (current.next) {
+    current = current.next;
+  }
+  current.next = newNode;
+  return head;
+}"
+linked list deletion at head,"function deleteAtHead(head) {
+  if (!head) {
+    return null;
+  }
+  return head.next;
+}"
+linked list deletion at tail,"function deleteAtTail(head) {
+  if (!head || !head.next) {
+    return null;
+  }
+  let current = head;
+  while (current.next.next) {
+    current = current.next;
+  }
+  current.next = null;
+  return head;
+}"
+linked list search,"function search(head, val) {
+  let current = head;
+  while (current) {
+    if (current.val === val) {
+      return true;
+    }
+    current = current.next;
+  }
+  return false;
+}"
+linked list traversal,"function traverse(head) {
+  const result = [];
+  let current = head;
+  while (current) {
+    result.push(current.val);
+    current = current.next;
+  }
+  return result;
+}"
+stack implementation using array,"class Stack {
+  constructor() {
+    this.items = [];
+  }
+
+  push(element) {
+    this.items.push(element);
+  }
+
+  pop() {
+    if (this.isEmpty()) {
+      return 'Underflow';
+    }
+    return this.items.pop();
+  }
+
+  peek() {
+    if (this.isEmpty()) {
+      return 'No elements in the stack';
+    }
+    return this.items[this.items.length - 1];
+  }
+
+  isEmpty() {
+    return this.items.length === 0;
+  }
+
+  printStack() {
+    let str = '';
+    for (let i = 0; i < this.items.length; i++) {
+      str += this.items[i] + ' ';
+    }
+    return str;
+  }
+}"
+stack implementation using linked list,"class StackNode {
+  constructor(data) {
+    this.data = data;
+    this.next = null;
+  }
+}
+
+class Stack {
+  constructor() {
+    this.top = null;
+  }
+
+  push(data) {
+    const newNode = new StackNode(data);
+    if (!this.top) {
+      this.top = newNode;
+    } else {
+      newNode.next = this.top;
+      this.top = newNode;
+    }
+  }
+
+  pop() {
+    if (!this.top) {
+      return 'Underflow';
+    }
+    const popped = this.top;
+    this.top = this.top.next;
+    return popped.data;
+  }
+
+  peek() {
+    if (!this.top) {
+      return 'No elements in the stack';
+    }
+    return this.top.data;
+  }
+
+  isEmpty() {
+    return this.top === null;
+  }
+
+  printStack() {
+    let current = this.top;
+    let str = '';
+    while (current) {
+      str += current.data + ' ';
+      current = current.next;
+    }
+    return str;
+  }
+}"
+stack push operation,stack.push(element);
+stack pop operation,stack.pop();
+stack peek operation,stack.peek();
+stack isEmpty check,stack.isEmpty();
+stack printStack operation,stack.printStack();
+queue implementation using array,"class Queue {
+  constructor() {
+    this.items = [];
+  }
+
+  enqueue(element) {
+    this.items.push(element);
+  }
+
+  dequeue() {
+    if (this.isEmpty()) {
+      return 'Underflow';
+    }
+    return this.items.shift();
+  }
+
+  front() {
+    if (this.isEmpty()) {
+      return 'No elements in the queue';
+    }
+    return this.items[0];
+  }
+
+  isEmpty() {
+    return this.items.length === 0;
+  }
+
+  printQueue() {
+    let str = '';
+    for (let i = 0; i < this.items.length; i++) {
+      str += this.items[i] + ' ';
+    }
+    return str;
+  }
+}"
+queue implementation using linked list,"class QueueNode {
+  constructor(data) {
+    this.data = data;
+    this.next = null;
+  }
+}
+
+class Queue {
+  constructor() {
+    this.front = null;
+    this.rear = null;
+  }
+
+  enqueue(data) {
+    const newNode = new QueueNode(data);
+    if (!this.rear) {
+      this.front = newNode;
+      this.rear = newNode;
+    } else {
+      this.rear.next = newNode;
+      this.rear = newNode;
+    }
+  }
+
+  dequeue() {
+    if (!this.front) {
+      return 'Underflow';
+    }
+    const dequeued = this.front;
+    this.front = this.front.next;
+    if (!this.front) {
+      this.rear = null;
+    }
+    return dequeued.data;
+  }
+
+  frontElement() {
+    if (!this.front) {
+      return 'No elements in the queue';
+    }
+    return this.front.data;
+  }
+
+  isEmpty() {
+    return this.front === null;
+  }
+
+  printQueue() {
+    let current = this.front;
+    let str = '';
+    while (current) {
+      str += current.data + ' ';
+      current = current.next;
+    }
+    return str;
+  }
+}"
+queue enqueue operation,queue.enqueue(element);
+queue dequeue operation,queue.dequeue();
+queue front element,queue.frontElement();
+queue isEmpty check,queue.isEmpty();
+queue printQueue operation,queue.printQueue();
+binary tree node,"class TreeNode {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}"
+binary search tree (BST) insertion,"function insert(root, value) {
+  if (!root) {
+    return new TreeNode(value);
+  }
+  if (value < root.value) {
+    root.left = insert(root.left, value);
+  } else {
+    root.right = insert(root.right, value);
+  }
+  return root;
+}"
+binary search tree (BST) search,"function search(root, value) {
+  if (!root || root.value === value) {
+    return root;
+  }
+  if (value < root.value) {
+    return search(root.left, value);
+  }
+  return search(root.right, value);
+}"
+binary search tree (BST) deletion,"function deleteNode(root, key) {
+  if (!root) {
+    return null;
+  }
+  if (key < root.value) {
+    root.left = deleteNode(root.left, key);
+  } else if (key > root.value) {
+    root.right = deleteNode(root.right, key);
+  } else {
+    if (!root.left) {
+      return root.right;
+    } else if (!root.right) {
+      return root.left;
+    }
+    root.value = minValue(root.right);
+    root.right = deleteNode(root.right, root.value);
+  }
+  return root;
+}
+
+function minValue(node) {
+  let current = node;
+  while (current.left) {
+    current = current.left;
+  }
+  return current.value;
+}"
+binary tree traversal: inorder,"function inorderTraversal(root) {
+  if (!root) {
+    return [];
+  }
+  return [...inorderTraversal(root.left), root.value, ...inorderTraversal(root.right)];
+}"
+binary tree traversal: preorder,"function preorderTraversal(root) {
+  if (!root) {
+    return [];
+  }
+  return [root.value, ...preorderTraversal(root.left), ...preorderTraversal(root.right)];
+}"
+binary tree traversal: postorder,"function postorderTraversal(root) {
+  if (!root) {
+    return [];
+  }
+  return [...postorderTraversal(root.left), ...postorderTraversal(root.right), root.value];
+}"
