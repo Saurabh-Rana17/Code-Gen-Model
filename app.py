@@ -1,8 +1,11 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify 
+from flask_cors import CORS
+
 import joblib
 
 # Create a Flask app
 app = Flask(__name__)
+CORS(app)
 
 # Load the trained model
 model = joblib.load('model.pkl')
